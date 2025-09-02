@@ -153,3 +153,8 @@
             // Start the main experience
             startExperience();
         });
+ window.addEventListener('DOMContentLoaded', () => {
+            loadMusicState();
+            //  no longer start the experience automatically
+        });
+        window.addEventListener('beforeunload', saveMusicState);
