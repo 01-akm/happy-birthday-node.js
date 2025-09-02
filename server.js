@@ -22,3 +22,9 @@ app.post('/api/save-message', (req, res) => {
     if (!message || message.trim() === '') {
         return res.status(400).json({ success: false, error: 'Message cannot be empty.' });
     }
+
+     // This is the "log file" part. It prints the message to your Render server logs.
+    console.log(`--- NEW MESSAGE RECEIVED ---`);
+    console.log(`Timestamp: ${new Date().toISOString()}`);
+    console.log(`Message: ${message}`);
+    console.log(`--------------------------`);
