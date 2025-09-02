@@ -89,3 +89,8 @@
 
         const typedTextElement = document.getElementById('typed-text');
         const nextPageBtn = document.getElementById('next-page-btn');
+          const typingSpeed = 60; // Milliseconds per character
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (charIndex < fullMessage.length) {
