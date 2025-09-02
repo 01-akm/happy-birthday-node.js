@@ -43,3 +43,8 @@
                             mainContent.querySelector('h1').classList.add('animate-drop-in');
                             mainContent.querySelector('p').classList.add('animate-fade-in-up');
                         }, 500);
+                         // Show the next page button after another delay
+                        setTimeout(() => {
+                            nextPageBtn.style.transition = 'opacity 1s ease-out';
+                            nextPageBtn.style.opacity = '1';
+                        }, 2500);
