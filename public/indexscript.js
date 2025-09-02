@@ -144,3 +144,7 @@
         };
  // --- NEW START LOGIC ---
         startBtn.addEventListener('click', () => {
+             // Fade out the start screen
+            startScreen.style.opacity = '0';
+            setTimeout(() => {
+                startScreen.classList.add('hidden');
