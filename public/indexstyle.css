@@ -6,6 +6,7 @@
         .font-handwriting {
             font-family: 'Lobster', cursive;
         }
+
         /* Animation Keyframes */
         @keyframes dropIn {
             from { transform: translateY(-100px) scale(0.8); opacity: 0; }
@@ -21,7 +22,8 @@
         .animate-fade-in-up {
             animation: fadeInUp 1.5s ease-out 0.5s forwards;
         }
-/* Sparkle styles */
+
+        /* Sparkle styles */
         .sparkle {
             position: absolute;
             top: 50%;
@@ -46,7 +48,8 @@
                 opacity: 0;
             }
         }
-         /* Sparkling Ribbon styles */
+        
+        /* Sparkling Ribbon styles */
         .ribbon-particle {
             position: absolute;
             top: 50%;
@@ -71,6 +74,7 @@
                 opacity: 0;
             }
         }
+        
         /* Mute Button Style */
         #mute-btn {
             position: fixed;
@@ -100,7 +104,8 @@
             0%, 100% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.1); opacity: 0.8; }
         }
-          /* Start Screen Style */
+        
+        /* Start Screen Style */
         #start-screen {
             transition: opacity 0.5s ease-out;
         }
