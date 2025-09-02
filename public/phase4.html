@@ -44,3 +44,26 @@
         </div>
     </div>
 
+<script>
+        const form = document.getElementById('message-form');
+        const mainContent = document.getElementById('main-content');
+        const thankYouMessage = document.getElementById('thank-you-message');
+        const thankYouModalContent = thankYouMessage.querySelector('div');
+        const sendMoreBtn = document.getElementById('send-more-btn');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const messageInput = form.querySelector('textarea[name="message"]');
+            const submitButton = form.querySelector('button[type="submit"]');
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            try {
+                const response = await fetch('/api/save-message', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: messageInput.value })
+                });
+
+                if (response.ok) {
