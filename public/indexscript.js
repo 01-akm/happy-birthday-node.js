@@ -7,3 +7,8 @@
         const startBtn = document.getElementById('start-btn');
 
         function startExperience() {
+             // Start the music immediately!
+            const audio = document.getElementById('background-music');
+            if (audio.paused) {
+                audio.play().catch(e => console.error("Audio play failed:", e));
+            }
