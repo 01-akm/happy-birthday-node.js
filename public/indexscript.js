@@ -22,3 +22,4 @@
                 if (count > 0) {
                     countdownEl.textContent = count;
                       createSparkles(25); // Mini sparkle burst
+                        createRibbons(10);  // Mini ribbon burst
