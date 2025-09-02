@@ -53,3 +53,46 @@
                 }
             }, 1000);
         }
+         function createSparkles(count = 150) {
+            const sparkleCount = count;
+            const colors = ['#ffeb3b', '#ffd700', '#fff59d', '#ffffff'];
+
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * (Math.max(window.innerWidth, window.innerHeight) * 0.6);
+                const translateX = Math.cos(angle) * distance;
+                const translateY = Math.sin(angle) * distance;
+
+                sparkle.style.setProperty('--sparkle-transform', `translate(${translateX}px, ${translateY}px) scale(0)`);
+                sparkle.style.animationDuration = `${1 + Math.random()}s`;
+                sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+                effectContainer.appendChild(sparkle);
+            }
+        }
+  function createRibbons(count = 60) {
+            const ribbonCount = count;
+            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#ff4081', '#448aff'];
+
+            for (let i = 0; i < ribbonCount; i++) {
+                const ribbon = document.createElement('div');
+                ribbon.classList.add('ribbon-particle');
+
+                const angle = (Math.random() * 360);
+                const distance = Math.random() * (Math.min(window.innerWidth, window.innerHeight) * 0.7);
+                const translateX = Math.cos(angle * Math.PI / 180) * distance;
+                const translateY = Math.sin(angle * Math.PI / 180) * distance;
+                const finalRotate = (Math.random() - 0.5) * 1080;
+
+                ribbon.style.setProperty('--initial-rotate', `${(Math.random() - 0.5) * 90}deg`);
+                ribbon.style.setProperty('--ribbon-transform', `translate(${translateX}px, ${translateY}px) rotate(${finalRotate}deg) scale(0)`);
+                ribbon.style.animationDuration = `${1.5 + Math.random() * 1.5}s`;
+                ribbon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                effectContainer.appendChild(ribbon);
+            }
+        }
+        
