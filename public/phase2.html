@@ -155,3 +155,25 @@
             z-index: 1000;
         }
     </style>
+    </head>
+
+<body class="bg-[#1a202c] text-white flex flex-col items-center justify-center min-h-screen p-4 overflow-hidden">
+
+    <header class="text-center mb-8">
+        <h1 class="font-handwriting text-5xl md:text-7xl text-cyan-300 drop-shadow-lg">Our Memory Lane</h1>
+        <p class="text-lg text-gray-400 mt-2">A few moments that I'll always cherish.
+            <br> </p>
+        </p>
+    </header>
+
+    <div class="relative w-full max-w-2xl">
+        <div id="slideshow-container"
+            class="relative w-full aspect-[4/3] bg-gray-900/50 rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden breathing-effect">
+            <img id="memory-image" src="" alt="Memory" class="absolute top-0 left-0 w-full h-full object-cover">
+
+            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
+                <div id="caption-container" class="transform translate-y-full">
+                    <p id="memory-caption" class="text-center text-lg text-white drop-shadow-md"></p>
+                </div>
+            </div>
+        </div>
