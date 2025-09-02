@@ -34,3 +34,12 @@
                         // FINAL BURST
                         createSparkles(150); // The big explosion
                         createRibbons(60);   // The big explosion
+                         // Show main content after a short delay
+                        setTimeout(() => {
+                            mainContent.style.pointerEvents = 'auto';
+                            mainContent.style.opacity = '1';
+                            mainContent.querySelector('h1').style.opacity = '1';
+                            mainContent.querySelector('p').style.opacity = '1';
+                            mainContent.querySelector('h1').classList.add('animate-drop-in');
+                            mainContent.querySelector('p').classList.add('animate-fade-in-up');
+                        }, 500);
