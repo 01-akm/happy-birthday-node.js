@@ -28,3 +28,6 @@ app.post('/api/save-message', (req, res) => {
     console.log(`Timestamp: ${new Date().toISOString()}`);
     console.log(`Message: ${message}`);
     console.log(`--------------------------`);
+     // Send a success response back to the webpage
+    res.status(200).json({ success: true, message: 'Message logged successfully!' });
+});
