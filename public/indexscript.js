@@ -148,3 +148,8 @@
             startScreen.style.opacity = '0';
             setTimeout(() => {
                 startScreen.classList.add('hidden');
+                  }, 500); // Match this with the CSS transition duration
+
+            // Start the main experience
+            startExperience();
+        });
