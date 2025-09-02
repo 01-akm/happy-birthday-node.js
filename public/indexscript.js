@@ -23,3 +23,12 @@
                     countdownEl.textContent = count;
                       createSparkles(25); // Mini sparkle burst
                         createRibbons(10);  // Mini ribbon burst
+                        } else {
+                    clearInterval(countdownInterval);
+                    
+                    // Fade out countdown
+                    countdownEl.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        countdownEl.classList.add('hidden');
+                        
