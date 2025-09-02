@@ -67,3 +67,25 @@
                 });
 
                 if (response.ok) {
+                      messageInput.value = ''; // Clear input for next message
+                    mainContent.classList.add('hidden');
+                    thankYouMessage.classList.remove('hidden');
+                    setTimeout(() => {
+                        thankYouMessage.style.opacity = '1';
+                        thankYouModalContent.style.opacity = '1';
+                        thankYouModalContent.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    alert('Oops! There was a problem sending your message.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Oops! There was a network problem.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            }
+        });
+
+        sendMoreBtn.addEventListener('click', () => {
+            // Animate the modal out
