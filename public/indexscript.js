@@ -95,4 +95,39 @@
                 effectContainer.appendChild(ribbon);
             }
         }
+          // --- CONTINUOUS MUSIC SCRIPT ---
+        const audio = document.getElementById('background-music');
+        const muteBtn = document.getElementById('mute-btn');
+        const speakerIcon = document.getElementById('speaker-icon');
+        const muteIcon = document.getElementById('mute-icon');
+
+        function saveMusicState() {
+            localStorage.setItem('musicTime', audio.currentTime);
+            localStorage.setItem('musicPaused', audio.muted);
+        }
+
+        function loadMusicState() {
+            const time = localStorage.getItem('musicTime');
+            const paused = localStorage.getItem('musicPaused') === 'true';
+            
+            if (time) {
+                audio.currentTime = parseFloat(time);
+            }
+            
+            audio.muted = paused;
+            updateMuteButton(paused);
+
+            if (localStorage.getItem('musicPlaying') === 'true' && !paused) {
+                 audio.play().catch(e => console.log("Audio needs user interaction to play."));
+            }
+        }
         
+        function updateMuteButton(isMuted) {
+             if(isMuted) {
+                speakerIcon.classList.add('hidden');
+                muteIcon.classList.remove('hidden');
+             } else {
+                speakerIcon.classList.remove('hidden');
+                muteIcon.classList.add('hidden');
+             }
+        }
