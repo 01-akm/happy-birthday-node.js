@@ -123,3 +123,47 @@
         }
 
         function loadMusicState() {
+             // This function will now RESUME the music from the previous page
+            const time = localStorage.getItem('musicTime');
+            const paused = localStorage.getItem('musicPaused') === 'true';
+            const playing = localStorage.getItem('musicPlaying') === 'true';
+            
+            if (time) {
+                audio.currentTime = parseFloat(time);
+            }
+            
+            audio.muted = paused;
+            updateMuteButton(paused);
+
+            if (playing && !paused) {
+                 audio.play().catch(e => console.log("Audio needs interaction to play."));
+            }
+        }
+        
+        function updateMuteButton(isMuted) {
+             if(isMuted) {
+                speakerIcon.classList.add('hidden');
+                muteIcon.classList.remove('hidden');
+             } else {
+                speakerIcon.classList.remove('hidden');
+                muteIcon.classList.add('hidden');
+             }
+        }
+        
+        muteBtn.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+            if(audio.muted) {
+                audio.pause();
+            } else if (localStorage.getItem('musicPlaying') === 'true') { // Only play if it was meant to be playing
+                audio.play().catch(e => console.log("Audio play failed after unmute"));
+            }
+            localStorage.setItem('musicPaused', audio.muted);
+            updateMuteButton(audio.muted);
+        });
+
+        window.addEventListener('beforeunload', saveMusicState);
+
+    </script>
+</body>
+</html>
+
