@@ -31,4 +31,6 @@
                     
                     setTimeout(() => {
                         countdownEl.classList.add('hidden');
-                        
+                        // FINAL BURST
+                        createSparkles(150); // The big explosion
+                        createRibbons(60);   // The big explosion
