@@ -21,3 +21,29 @@
         .animate-fade-in-up {
             animation: fadeInUp 1.5s ease-out 0.5s forwards;
         }
+/* Sparkle styles */
+        .sparkle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: sparkle-effect 1.5s ease-out forwards;
+            box-shadow: 0 0 10px #ffd700, 0 0 20px #fff;
+        }
+
+        @keyframes sparkle-effect {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: var(--sparkle-transform);
+                opacity: 0;
+            }
+        }
+        
