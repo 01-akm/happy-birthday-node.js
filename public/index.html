@@ -24,27 +24,30 @@
 
     <!-- Countdown Element (Initially Hidden) -->
     <div id="countdown" class="hidden absolute text-9xl font-bold text-yellow-300 z-30"></div>
-<!-- Main Content (hidden initially & positioned absolutely) -->
+
+    <!-- Main Content (hidden initially & positioned absolutely) -->
     <div id="main-content" class="text-center opacity-0 transition-opacity duration-1000 absolute pointer-events-none">
-        <h1 class="font-handwriting text-7xl md:text-9xl text-yellow-300 drop-shadow-lg" style="opacity: 0;">Happy B-day Mommy!</h1>
+        <h1 class="font-handwriting text-7xl md:text-9xl text-yellow-300 drop-shadow-lg" style="opacity: 0;">Happy Birthday!</h1>
         <p class="mt-4 text-xl md:text-2xl text-gray-300" style="opacity: 0;">Wishing you a day as special as you are.</p>
         
         <a href="phase2.html" id="next-page-btn" class="opacity-0 mt-8 inline-block bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-1000 transform hover:scale-105">
             See The Memories &rarr;
         </a>
     </div>
-     <!-- Sparkle/Ribbon Container -->
+    
+    <!-- Sparkle/Ribbon Container -->
     <div id="effect-container" class="absolute top-0 left-0 w-full h-full pointer-events-none"></div>
-<!-- Audio player and Mute Button -->
+
+    <!-- Audio player and Mute Button -->
     <audio id="background-music" loop src="background-music.mp3"></audio>
     <div id="mute-btn">
-         <!-- Speaker Icon -->
+        <!-- Speaker Icon -->
         <svg id="speaker-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
         <!-- Mute Icon -->
         <svg id="mute-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
     </div>
+
     <script src="indexscript.js"></script>
 </body>
 </html>
-
 
