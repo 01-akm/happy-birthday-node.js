@@ -21,3 +21,4 @@
                 count--;
                 if (count > 0) {
                     countdownEl.textContent = count;
+                      createSparkles(25); // Mini sparkle burst
