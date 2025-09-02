@@ -14,3 +14,16 @@
             background-color: #2d3748; /* A deep blue-gray background */
             overflow-x: hidden;
         }
+  .font-handwriting {
+            font-family: 'Caveat', cursive;
+        }
+        
+        /* Entrance animation for the whole page */
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .animate-page-fade-in {
+            animation: pageFadeIn 1.5s ease-out forwards;
+        }
