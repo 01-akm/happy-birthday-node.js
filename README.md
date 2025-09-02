@@ -4,6 +4,7 @@ This project is a **multi-page, animated, and interactive web application** desi
 It takes the user on a journey through several phases — from a spectacular intro countdown, to a personalized photo gallery, and finally to an interactive section where they can send a message back to the creator.  
 The entire experience is enhanced with **continuous background music** that plays seamlessly across all pages.
 
+https://happy-birthday-node-js.onrender.com/
 ---
 
 ## ✨ Core Features
