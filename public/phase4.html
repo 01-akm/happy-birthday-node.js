@@ -34,7 +34,7 @@
     <!-- New Thank You Modal -->
     <div id="thank-you-message" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-gradient-to-br from-gray-700 to-gray-800 text-white rounded-2xl shadow-2xl p-8 w-full max-w-md text-center transform scale-95 opacity-0">
-             <!-- Checkmark Icon -->
+            <!-- Checkmark Icon -->
             <svg class="w-16 h-16 mx-auto mb-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             <h1 class="font-handwriting text-5xl md:text-6xl text-green-300 drop-shadow-lg">Thank You!</h1>
             <p class="text-lg text-gray-300 mt-2">Your message has been sent.</p>
@@ -44,7 +44,8 @@
         </div>
     </div>
 
-<script>
+
+    <script>
         const form = document.getElementById('message-form');
         const mainContent = document.getElementById('main-content');
         const thankYouMessage = document.getElementById('thank-you-message');
@@ -67,7 +68,7 @@
                 });
 
                 if (response.ok) {
-                      messageInput.value = ''; // Clear input for next message
+                    messageInput.value = ''; // Clear input for next message
                     mainContent.classList.add('hidden');
                     thankYouMessage.classList.remove('hidden');
                     setTimeout(() => {
@@ -89,7 +90,7 @@
 
         sendMoreBtn.addEventListener('click', () => {
             // Animate the modal out
-              thankYouMessage.style.opacity = '0';
+            thankYouMessage.style.opacity = '0';
             thankYouModalContent.style.transform = 'scale(0.95)';
             thankYouModalContent.style.opacity = '0';
             
