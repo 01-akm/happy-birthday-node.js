@@ -89,3 +89,17 @@
 
         sendMoreBtn.addEventListener('click', () => {
             // Animate the modal out
+              thankYouMessage.style.opacity = '0';
+            thankYouModalContent.style.transform = 'scale(0.95)';
+            thankYouModalContent.style.opacity = '0';
+            
+            setTimeout(() => {
+                // Hide modal and show the form again
+                thankYouMessage.classList.add('hidden');
+                mainContent.classList.remove('hidden');
+            }, 300); // Must match transition duration in CSS
+        });
+    </script>
+</body>
+</html>
+
