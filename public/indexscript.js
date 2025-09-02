@@ -12,3 +12,12 @@
             if (audio.paused) {
                 audio.play().catch(e => console.error("Audio play failed:", e));
             }
+ // Show and start the countdown
+            countdownEl.classList.remove('hidden');
+            let count = 10;
+            countdownEl.textContent = count;
+            
+            const countdownInterval = setInterval(() => {
+                count--;
+                if (count > 0) {
+                    countdownEl.textContent = count;
