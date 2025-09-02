@@ -16,19 +16,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 // --- The API Endpoint ---
 // This is where the form from phase4.html will send the message
 app.post('/api/save-message', (req, res) => {
-     // Get the message from the request body
+    // Get the message from the request body
     const message = req.body.message;
 
     if (!message || message.trim() === '') {
         return res.status(400).json({ success: false, error: 'Message cannot be empty.' });
     }
 
-     // This is the "log file" part. It prints the message to your Render server logs.
+    // This is the "log file" part. It prints the message to your Render server logs.
     console.log(`--- NEW MESSAGE RECEIVED ---`);
     console.log(`Timestamp: ${new Date().toISOString()}`);
     console.log(`Message: ${message}`);
     console.log(`--------------------------`);
-     // Send a success response back to the webpage
+
+    // Send a success response back to the webpage
     res.status(200).json({ success: true, message: 'Message logged successfully!' });
 });
 
@@ -36,3 +37,4 @@ app.post('/api/save-message', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
