@@ -46,4 +46,29 @@
                 opacity: 0;
             }
         }
+         /* Sparkling Ribbon styles */
+        .ribbon-particle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 40px;
+            background-color: #e91e63;
+            pointer-events: none;
+            opacity: 0;
+            animation: fly-out 2.5s ease-out forwards;
+            border-radius: 4px;
+            box-shadow: 0 0 8px currentColor, 0 0 16px white;
+        }
+
+        @keyframes fly-out {
+            0% {
+                transform: translate(-50%, -50%) rotate(var(--initial-rotate)) scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: var(--ribbon-transform);
+                opacity: 0;
+            }
+        }
         
