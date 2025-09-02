@@ -48,3 +48,8 @@
                             nextPageBtn.style.transition = 'opacity 1s ease-out';
                             nextPageBtn.style.opacity = '1';
                         }, 2500);
+
+                    }, 500); // Wait for the fade out to finish
+                }
+            }, 1000);
+        }
