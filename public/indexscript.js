@@ -131,3 +131,16 @@
                 muteIcon.classList.add('hidden');
              }
         }
+          
+        muteBtn.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+            localStorage.setItem('musicPaused', audio.muted);
+            updateMuteButton(audio.muted);
+        });
+
+        audio.onplay = () => localStorage.setItem('musicPlaying', 'true');
+        audio.onpause = () => {
+            if(!audio.muted) localStorage.setItem('musicPlaying', 'false');
+        };
+ // --- NEW START LOGIC ---
+        startBtn.addEventListener('click', () => {
