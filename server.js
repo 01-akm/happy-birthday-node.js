@@ -16,3 +16,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // --- The API Endpoint ---
 // This is where the form from phase4.html will send the message
 app.post('/api/save-message', (req, res) => {
+     // Get the message from the request body
+    const message = req.body.message;
+
+    if (!message || message.trim() === '') {
+        return res.status(400).json({ success: false, error: 'Message cannot be empty.' });
+    }
