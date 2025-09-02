@@ -7,12 +7,13 @@
         const startBtn = document.getElementById('start-btn');
 
         function startExperience() {
-             // Start the music immediately!
+            // Start the music immediately!
             const audio = document.getElementById('background-music');
             if (audio.paused) {
                 audio.play().catch(e => console.error("Audio play failed:", e));
             }
- // Show and start the countdown
+
+            // Show and start the countdown
             countdownEl.classList.remove('hidden');
             let count = 10;
             countdownEl.textContent = count;
@@ -21,9 +22,9 @@
                 count--;
                 if (count > 0) {
                     countdownEl.textContent = count;
-                      createSparkles(25); // Mini sparkle burst
-                        createRibbons(10);  // Mini ribbon burst
-                        } else {
+                    createSparkles(25); // Mini sparkle burst
+                    createRibbons(10);  // Mini ribbon burst
+                } else {
                     clearInterval(countdownInterval);
                     
                     // Fade out countdown
@@ -31,10 +32,12 @@
                     
                     setTimeout(() => {
                         countdownEl.classList.add('hidden');
+                        
                         // FINAL BURST
                         createSparkles(150); // The big explosion
                         createRibbons(60);   // The big explosion
-                         // Show main content after a short delay
+
+                        // Show main content after a short delay
                         setTimeout(() => {
                             mainContent.style.pointerEvents = 'auto';
                             mainContent.style.opacity = '1';
@@ -43,7 +46,8 @@
                             mainContent.querySelector('h1').classList.add('animate-drop-in');
                             mainContent.querySelector('p').classList.add('animate-fade-in-up');
                         }, 500);
-                         // Show the next page button after another delay
+
+                        // Show the next page button after another delay
                         setTimeout(() => {
                             nextPageBtn.style.transition = 'opacity 1s ease-out';
                             nextPageBtn.style.opacity = '1';
@@ -53,7 +57,8 @@
                 }
             }, 1000);
         }
-         function createSparkles(count = 150) {
+
+        function createSparkles(count = 150) {
             const sparkleCount = count;
             const colors = ['#ffeb3b', '#ffd700', '#fff59d', '#ffffff'];
 
@@ -73,7 +78,8 @@
                 effectContainer.appendChild(sparkle);
             }
         }
-  function createRibbons(count = 60) {
+
+        function createRibbons(count = 60) {
             const ribbonCount = count;
             const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#ff4081', '#448aff'];
 
@@ -95,7 +101,8 @@
                 effectContainer.appendChild(ribbon);
             }
         }
-          // --- CONTINUOUS MUSIC SCRIPT ---
+
+        // --- CONTINUOUS MUSIC SCRIPT ---
         const audio = document.getElementById('background-music');
         const muteBtn = document.getElementById('mute-btn');
         const speakerIcon = document.getElementById('speaker-icon');
@@ -131,7 +138,7 @@
                 muteIcon.classList.add('hidden');
              }
         }
-          
+        
         muteBtn.addEventListener('click', () => {
             audio.muted = !audio.muted;
             localStorage.setItem('musicPaused', audio.muted);
@@ -142,19 +149,22 @@
         audio.onpause = () => {
             if(!audio.muted) localStorage.setItem('musicPlaying', 'false');
         };
- // --- NEW START LOGIC ---
+
+        // --- NEW START LOGIC ---
         startBtn.addEventListener('click', () => {
-             // Fade out the start screen
+            // Fade out the start screen
             startScreen.style.opacity = '0';
             setTimeout(() => {
                 startScreen.classList.add('hidden');
-                  }, 500); // Match this with the CSS transition duration
+            }, 500); // Match this with the CSS transition duration
 
             // Start the main experience
             startExperience();
         });
- window.addEventListener('DOMContentLoaded', () => {
+
+        window.addEventListener('DOMContentLoaded', () => {
             loadMusicState();
-            //  no longer start the experience automatically
+            // We no longer start the experience automatically
         });
         window.addEventListener('beforeunload', saveMusicState);
+    
