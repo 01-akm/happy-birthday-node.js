@@ -31,3 +31,8 @@ app.post('/api/save-message', (req, res) => {
      // Send a success response back to the webpage
     res.status(200).json({ success: true, message: 'Message logged successfully!' });
 });
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
