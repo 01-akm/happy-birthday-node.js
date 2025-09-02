@@ -6,3 +6,18 @@
         .font-handwriting {
             font-family: 'Lobster', cursive;
         }
+        /* Animation Keyframes */
+        @keyframes dropIn {
+            from { transform: translateY(-100px) scale(0.8); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        .animate-drop-in {
+            animation: dropIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1.5s ease-out 0.5s forwards;
+        }
