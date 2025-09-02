@@ -99,3 +99,10 @@
                 charIndex++;
                 setTimeout(typeWriter, typingSpeed);
             } else {
+                 // Typing finished, remove cursor and show button
+                typedTextElement.innerHTML = fullMessage; // Final text without cursor
+                nextPageBtn.style.opacity = '1';
+            }
+        }
+        
+        window.onload = () => {
