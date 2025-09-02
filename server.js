@@ -9,3 +9,6 @@ const PORT = process.env.PORT || 3000;
 // Middleware to handle JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serve all the HTML, CSS, JS, and music files from the 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
