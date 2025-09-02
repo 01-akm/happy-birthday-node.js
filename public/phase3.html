@@ -110,4 +110,16 @@
            setTimeout(typeWriter, 1500);
            loadMusicState(); // Load the music state
         };
-        
+         // --- CONTINUOUS MUSIC SCRIPT ---
+        const audio = document.getElementById('background-music');
+        const muteBtn = document.getElementById('mute-btn');
+        const speakerIcon = document.getElementById('speaker-icon');
+        const muteIcon = document.getElementById('mute-icon');
+
+        function saveMusicState() {
+            localStorage.setItem('musicTime', audio.currentTime);
+            localStorage.setItem('musicPaused', audio.muted);
+            localStorage.setItem('musicPlaying', !audio.paused);
+        }
+
+        function loadMusicState() {
