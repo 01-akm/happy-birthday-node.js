@@ -37,3 +37,43 @@
             Start Over
         </a>
     </div>
+    
+    <script>
+        const form = document.getElementById('message-form');
+        const mainContent = document.getElementById('main-content');
+        const thankYouMessage = document.getElementById('thank-you-message');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const messageInput = form.querySelector('textarea[name="message"]');
+            const submitButton = form.querySelector('button[type="submit"]');
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            try {
+                const response = await fetch('/api/save-message', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: messageInput.value })
+                });
+
+                if (response.ok) {
+                    mainContent.classList.add('hidden');
+                    thankYouMessage.classList.remove('hidden');
+                    setTimeout(() => thankYouMessage.style.opacity = '1', 10);
+                } else {
+                    alert('Oops! There was a problem sending your message.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Oops! There was a network problem.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            }
+        });
+    </script>
+</body>
+</html>
+
