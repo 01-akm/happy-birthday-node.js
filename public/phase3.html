@@ -94,3 +94,8 @@
 
         function typeWriter() {
             if (charIndex < fullMessage.length) {
+                 // We inject the text and keep the cursor at the end
+                typedTextElement.innerHTML = fullMessage.substring(0, charIndex + 1) + '<span class="typing-cursor"></span>';
+                charIndex++;
+                setTimeout(typeWriter, typingSpeed);
+            } else {
