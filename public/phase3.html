@@ -14,7 +14,8 @@
             background-color: #2d3748; /* A deep blue-gray background */
             overflow-x: hidden;
         }
-  .font-handwriting {
+
+        .font-handwriting {
             font-family: 'Caveat', cursive;
         }
         
@@ -27,7 +28,8 @@
         .animate-page-fade-in {
             animation: pageFadeIn 1.5s ease-out forwards;
         }
-             /* Blinking cursor effect */
+
+        /* Blinking cursor effect */
         .typing-cursor {
             display: inline-block;
             width: 3px;
@@ -41,7 +43,8 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
- /* Mute Button Style */
+
+        /* Mute Button Style */
         #mute-btn {
             position: fixed;
             bottom: 20px;
@@ -56,7 +59,7 @@
             cursor: pointer;
             z-index: 1000;
         }
-         </style>
+    </style>
 </head>
 <body class="text-white flex items-center justify-center min-h-screen p-4">
 
@@ -65,16 +68,18 @@
         <!-- The "letter" area -->
         <div class="bg-gray-100 text-gray-800 rounded-lg shadow-2xl p-6 md:p-10 min-h-[400px]">
             <p id="typed-text" class="font-handwriting text-2xl md:text-3xl text-left leading-relaxed">
-               <!-- The message will be typed here -->
+                <!-- The message will be typed here -->
                 <span class="typing-cursor"></span>
             </p>
         </div>
-         <!-- Navigation Button (initially hidden) -->
+        
+        <!-- Navigation Button (initially hidden) -->
         <a href="phase4.html" id="next-page-btn" class="opacity-0 mt-8 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-1000 transform hover:scale-105">
             One Last Surprise... &rarr;
         </a>
     </div>
-         <!-- Audio player and Mute Button -->
+
+    <!-- Audio player and Mute Button -->
     <audio id="background-music" loop src="music.mp3"></audio>
     <div id="mute-btn">
         <!-- Speaker Icon -->
@@ -82,35 +87,37 @@
         <!-- Mute Icon -->
         <svg id="mute-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
     </div>
-     <script>
+
+    <script>
         // --- IMPORTANT: CUSTOMIZE YOUR MESSAGE HERE ---
-        const fullMessage = "On your special day, I just wanted to take a moment to tell you how much you mean to me.";
-        // ----------------------------------------------
+         const fullMessage = "On your special day, I just wanted to take a moment to tell you how much you mean to me. Every day with you is a gift. You bring so much light and laughter into the world, and I'm incredibly lucky to know you. I hope this year brings you all the success, joy, and happiness you deserve. You're an amazing person with a beautiful heart, and I'm cheering for you always. Never forget how wonderful you are. Happy, happy birthday!";
+       // ----------------------------------------------
 
         const typedTextElement = document.getElementById('typed-text');
         const nextPageBtn = document.getElementById('next-page-btn');
-          const typingSpeed = 60; // Milliseconds per character
+        const typingSpeed = 60; // Milliseconds per character
         let charIndex = 0;
 
         function typeWriter() {
             if (charIndex < fullMessage.length) {
-                 // We inject the text and keep the cursor at the end
+                // We inject the text and keep the cursor at the end
                 typedTextElement.innerHTML = fullMessage.substring(0, charIndex + 1) + '<span class="typing-cursor"></span>';
                 charIndex++;
                 setTimeout(typeWriter, typingSpeed);
             } else {
-                 // Typing finished, remove cursor and show button
+                // Typing finished, remove cursor and show button
                 typedTextElement.innerHTML = fullMessage; // Final text without cursor
                 nextPageBtn.style.opacity = '1';
             }
         }
         
         window.onload = () => {
-             // Start the animation a moment after the page loads
+           // Start the animation a moment after the page loads
            setTimeout(typeWriter, 1500);
            loadMusicState(); // Load the music state
         };
-         // --- CONTINUOUS MUSIC SCRIPT ---
+        
+        // --- CONTINUOUS MUSIC SCRIPT ---
         const audio = document.getElementById('background-music');
         const muteBtn = document.getElementById('mute-btn');
         const speakerIcon = document.getElementById('speaker-icon');
@@ -123,7 +130,7 @@
         }
 
         function loadMusicState() {
-             // This function will now RESUME the music from the previous page
+            // This function will now RESUME the music from the previous page
             const time = localStorage.getItem('musicTime');
             const paused = localStorage.getItem('musicPaused') === 'true';
             const playing = localStorage.getItem('musicPlaying') === 'true';
